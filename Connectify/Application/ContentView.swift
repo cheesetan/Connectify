@@ -42,18 +42,19 @@ struct ContentView: View {
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                     }
                     .padding(.horizontal)
+                    .padding(.bottom)
                     
-                    HStack {
-                        Image(systemName: "lock")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 20, height: 20)
-                            .foregroundColor(.accentColor)
-                        SecureField("Password", text: $password)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                    }
-                    .padding(.horizontal)
-                    .padding(.bottom, 24)
+//                    HStack {
+//                        Image(systemName: "lock")
+//                            .resizable()
+//                            .scaledToFit()
+//                            .frame(width: 20, height: 20)
+//                            .foregroundColor(.accentColor)
+//                        SecureField("Password", text: $password)
+//                            .textFieldStyle(RoundedBorderTextFieldStyle())
+//                    }
+//                    .padding(.horizontal)
+//                    .padding(.bottom, 24)
                     
                     Button {
                         withAnimation {
@@ -63,7 +64,7 @@ struct ContentView: View {
                                 emailPersisted = email
                                 email = ""
                                 password = ""
-                            } else if email == "realinvestor@gmail.com" {
+                            } else if email.uppercased() == "andre@a16z.com".uppercased() {
                                 loggedIn = true
                                 isStudentAccount = false
                                 emailPersisted = email
@@ -74,20 +75,19 @@ struct ContentView: View {
                             }
                         }
                     } label: {
-                        Text("Login")
+                        Text("Continue")
                             .padding(5)
                             .fontWeight(.bold)
                             .frame(maxWidth: .infinity)
                     }
                     .buttonStyle(.borderedProminent)
-                    .disabled(email.isEmpty || !email.contains("@") || password.isEmpty)
+                    .disabled(email.isEmpty || !email.contains("@")/* || password.isEmpty*/)
                 }
                 .padding()
-                .alert(isPresented: $alertShowing) {
-                    Alert(title: Text("Invalid Credentials"),
-                          message: Text("Ensure that your email and password are valid."),
-                          primaryButton: .default(Text("OK"), action: {}),
-                          secondaryButton: .destructive(Text("Cancel")))
+                .alert("Invalid Credentials", isPresented: $alertShowing) {
+                    Button("OK", role: .cancel) {}
+                } message: {
+                    Text("Ensure that your email and password are valid.")
                 }
             }
             .sheet(isPresented: $showingOnboarding) {

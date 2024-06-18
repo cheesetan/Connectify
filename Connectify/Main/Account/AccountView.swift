@@ -13,6 +13,9 @@ struct AccountView: View {
     @AppStorage("isStudentAccount", store: .standard) private var isStudentAccount = false
     @AppStorage("showingOnboarding", store: .standard) private var showingOnboarding = true
     
+    @AppStorage("accounttype", store: .standard) private var accounttype = "Investor"
+    
+    
     var body: some View {
         NavigationStack {
             List {
@@ -39,7 +42,14 @@ struct AccountView: View {
                     if isStudentAccount {
                         LabeledContent("Account Type", value: "Student")
                     } else {
-                        LabeledContent("Account Type", value: "Investor + Reviewer")
+                        LabeledContent("Account Type") {
+                            Picker("", selection: $accounttype) {
+                                Text("Investor")
+                                    .tag("Investor")
+                                Text("Reviewer")
+                                    .tag("Reviewer")
+                            }
+                        }
                     }
                 }
                 

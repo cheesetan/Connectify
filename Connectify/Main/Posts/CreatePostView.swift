@@ -66,6 +66,12 @@ struct CreatePostView: View {
                         Image(systemName: "doc.badge.clock.fill")
                     }
                 }
+                
+                ToolbarItem(placement: .principal) {
+                    Text("Student Account")
+                        .fontWeight(.bold)
+                        .foregroundStyle(.blue)
+                }
             }
             .sheet(isPresented: $pendingReviewPosts) {
                 NavigationStack {

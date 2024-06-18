@@ -13,6 +13,8 @@ struct HomeView: View {
     
     @ObservedObject var lpManager: LivePostManager = .shared
     
+    @AppStorage("isStudentAccount", store: .standard) private var isStudentAccount = false
+    
     var body: some View {
         NavigationStack {
             List {
@@ -58,6 +60,19 @@ struct HomeView: View {
             }
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
             .navigationTitle("Your Feed")
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    if isStudentAccount {
+                        Text("Student Account")
+                            .fontWeight(.bold)
+                            .foregroundStyle(.blue)
+                    } else {
+                        Text("Investor Account")
+                            .fontWeight(.bold)
+                            .foregroundStyle(.red)
+                    }
+                }
+            }
         }
     }
     

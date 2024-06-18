@@ -8,8 +8,58 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @State var searchText = ""
+    
+    @ObservedObject var lpManager: LivePostManager = .shared
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            List {
+                ForEach(filteredPosts(), id: \.id) { post in
+                    NavigationLink {
+                        Form {
+                            Section("Information") {
+                                Text(post.productName)
+                                Text(post.price)
+                            }
+                            
+                            Section("Value Proposition") {
+                                Text(post.valueProp)
+                            }
+                            
+                            Section("Business and Marketing Plan") {
+                                Text(post.businessAndMarketingPlan)
+                            }
+                        }
+                        .navigationBarTitleDisplayMode(.inline)
+                    } label: {
+                        VStack(alignment: .leading) {
+                            Text(post.productName)
+                                .font(.headline)
+                                .fontWeight(.bold)
+                            Text(post.valueProp)
+                                .font(.subheadline)
+                                .foregroundStyle(.secondary)
+                                .lineLimit(2)
+                        }
+                    }
+                }
+                .onDelete { indexSet in
+                    lpManager.livePosts.remove(atOffsets: indexSet)
+                }
+            }
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always))
+            .navigationTitle("Your Feed")
+        }
+    }
+    
+    func filteredPosts() -> [Post] {
+        if searchText.isEmpty {
+            return lpManager.livePosts
+        } else {
+            return lpManager.livePosts.filter({ $0.productName.uppercased().contains(searchText.uppercased()) })
+        }
     }
 }
 

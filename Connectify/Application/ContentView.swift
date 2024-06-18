@@ -36,6 +36,9 @@ struct ContentView: View {
                         } else {
                             isStudentAccount = false
                         }
+                        
+                        email = ""
+                        password = ""
                     }
                 }
                 .buttonStyle(.borderedProminent)

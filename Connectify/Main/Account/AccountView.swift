@@ -13,41 +13,44 @@ struct AccountView: View {
     @AppStorage("isStudentAccount", store: .standard) private var isStudentAccount = false
     
     var body: some View {
-        List {
-            Section {
-                HStack {
-                    Image(systemName: "person.circle.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 48)
-                        .foregroundColor(.blue)
-                    VStack(alignment: .leading) {
-                        Text("Account Name")
-                            .font(.headline)
-                            .fontWeight(.bold)
-                        Text("Tap to view more information")
-                            .font(.footnote)
-                            .fontWeight(.bold)
-                            .foregroundStyle(.secondary)
+        NavigationStack {
+            List {
+                Section {
+                    HStack {
+                        Image(systemName: "person.circle.fill")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 48)
+                            .foregroundColor(.blue)
+                        VStack(alignment: .leading) {
+                            Text("Account Name")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                            Text("Tap to view more information")
+                                .font(.footnote)
+                                .fontWeight(.bold)
+                                .foregroundStyle(.secondary)
+                        }
+                        .padding(.leading, 5)
                     }
-                    .padding(.leading, 5)
+                    .padding(.vertical, 5)
+                    
+                    if isStudentAccount {
+                        LabeledContent("Account Type", value: "Student")
+                    } else {
+                        LabeledContent("Account Type", value: "Investor")
+                    }
                 }
-                .padding(.vertical, 5)
                 
-                if isStudentAccount {
-                    LabeledContent("Account Type", value: "Student")
-                } else {
-                    LabeledContent("Account Type", value: "Investor")
-                }
-            }
-            
-            Section {
-                Button("Log Out", role: .destructive) {
-                    withAnimation {
-                        loggedIn = false
+                Section {
+                    Button("Log Out", role: .destructive) {
+                        withAnimation {
+                            loggedIn = false
+                        }
                     }
                 }
             }
+            .navigationTitle("Account")
         }
     }
 }

@@ -17,10 +17,12 @@ struct CreatePostView: View {
     
     @State var pendingReviewPosts = false
     
-    @ObservedObject var ppManager: PendingPostManager = .shared
+    @State var isActive = false
     
     @Environment(\.dismiss) var dismiss
     
+    @ObservedObject var ppManager: PendingPostManager = .shared
+        
     var body: some View {
         NavigationStack {
             List {
@@ -52,39 +54,42 @@ struct CreatePostView: View {
                     .disabled(productName == "" || price == "" || valueProp == "" || businessAndMarketingPlan == "")
                 }
             }
+            .scrollDismissesKeyboard(.interactively)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         pendingReviewPosts.toggle()
                     } label: {
-                        Image(systemName: "document.badge.clock.fill")
+                        Image(systemName: "doc.badge.clock.fill")
                     }
                 }
             }
             .sheet(isPresented: $pendingReviewPosts) {
                 NavigationStack {
                     List {
-                        ForEach(ppManager.pendingPosts.indices, id: \.description) { i in
-                            NavigationLink {
+                        ForEach(ppManager.pendingPosts, id: \.id) { pendingPost in
+                            NavigationLink(isActive: $isActive) {
                                 Form {
                                     Section("Information") {
-                                        Text(ppManager.pendingPosts[i].productName)
-                                        Text(ppManager.pendingPosts[i].price)
+                                        Text(pendingPost.productName)
+                                        Text(pendingPost.price)
                                     }
                                     
                                     Section("Value Proposition") {
-                                        Text(ppManager.pendingPosts[i].valueProp)
+                                        Text(pendingPost.valueProp)
                                     }
                                     
                                     Section("Business and Marketing Plan") {
-                                        Text(ppManager.pendingPosts[i].businessAndMarketingPlan)
+                                        Text(pendingPost.businessAndMarketingPlan)
                                     }
                                     
                                     Button("Retract from Review", role: .destructive) {
-                                        ppManager.pendingPosts.remove(at: i)
-                                        dismiss()
+                                        ppManager.pendingPosts.removeAll(where: { $0 == pendingPost})
+                                        dismiss.callAsFunction()
+                                        isActive = false
                                     }
                                 }
+                                .navigationBarTitleDisplayMode(.inline)
                             } label: {
                                 HStack {
                                     Circle()
@@ -93,10 +98,10 @@ struct CreatePostView: View {
                                         .foregroundColor(.yellow)
                                         .padding(.horizontal, 5)
                                     VStack(alignment: .leading) {
-                                        Text(ppManager.pendingPosts[i].productName)
+                                        Text(pendingPost.productName)
                                             .font(.headline)
                                             .fontWeight(.bold)
-                                        Text(ppManager.pendingPosts[i].valueProp)
+                                        Text(pendingPost.valueProp)
                                             .font(.subheadline)
                                             .foregroundStyle(.secondary)
                                             .lineLimit(2)

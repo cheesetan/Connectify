@@ -18,8 +18,8 @@ struct OnboardingView: View {
                 .fontWeight(.bold)
                 .multilineTextAlignment(.center)
             item(icon: "person.badge.key.fill", title: "Connect and Invest", description: "Connectify allows student entrepreneurs to reach out and connect with Investors.")
-            item(icon: "checkmark.arrow.trianglehead.counterclockwise", title: "Reviewed and Verified", description: "Every single product posted in Connectify has been reviewed by our staff or investors to ensure that it is of good quality.")
-            item(icon: "dollarsign.arrow.trianglehead.counterclockwise.rotate.90", title: "Trusted Investors", description: "Investors on Connectify have been vetted and are only allowed onto the app on an invite-only basis.")
+            item(icon: "checkmark.gobackward", title: "Reviewed and Verified", description: "Every single product posted in Connectify has been reviewed by our staff or investors to ensure that it is of good quality.")
+            item(icon: "dollarsign.arrow.circlepath", title: "Trusted Investors", description: "Investors on Connectify have been vetted and are only allowed onto the app on an invite-only basis.")
             Spacer()
             Button {
                 dismiss()

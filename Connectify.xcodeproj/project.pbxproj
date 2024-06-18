@@ -17,7 +17,8 @@
 		F33CFCE32C213C87000ABC88 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33CFCE22C213C87000ABC88 /* AccountView.swift */; };
 		F33CFCE62C213D5B000ABC88 /* CreatePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33CFCE52C213D5B000ABC88 /* CreatePostView.swift */; };
 		F33CFCEB2C2148AA000ABC88 /* PostsReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33CFCEA2C2148AA000ABC88 /* PostsReviewView.swift */; };
-		F33CFCEE2C2151C0000ABC88 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33CFCED2C2151C0000ABC88 /* PostManager.swift */; };
+		F33CFCEE2C2151C0000ABC88 /* PendingPostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33CFCED2C2151C0000ABC88 /* PendingPostManager.swift */; };
+		F33CFCF02C215D00000ABC88 /* LivePostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33CFCEF2C215D00000ABC88 /* LivePostManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,7 +33,8 @@
 		F33CFCE22C213C87000ABC88 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		F33CFCE52C213D5B000ABC88 /* CreatePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostView.swift; sourceTree = "<group>"; };
 		F33CFCEA2C2148AA000ABC88 /* PostsReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsReviewView.swift; sourceTree = "<group>"; };
-		F33CFCED2C2151C0000ABC88 /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
+		F33CFCED2C2151C0000ABC88 /* PendingPostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingPostManager.swift; sourceTree = "<group>"; };
+		F33CFCEF2C215D00000ABC88 /* LivePostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePostManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +141,8 @@
 		F33CFCEC2C2151AC000ABC88 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				F33CFCED2C2151C0000ABC88 /* PostManager.swift */,
+				F33CFCED2C2151C0000ABC88 /* PendingPostManager.swift */,
+				F33CFCEF2C215D00000ABC88 /* LivePostManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -215,11 +218,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F33CFCE32C213C87000ABC88 /* AccountView.swift in Sources */,
+				F33CFCF02C215D00000ABC88 /* LivePostManager.swift in Sources */,
 				F33CFCEB2C2148AA000ABC88 /* PostsReviewView.swift in Sources */,
 				F33CFCE62C213D5B000ABC88 /* CreatePostView.swift in Sources */,
 				F33CFCDB2C213654000ABC88 /* OnboardingView.swift in Sources */,
 				F33CFCDE2C213C4C000ABC88 /* HomeView.swift in Sources */,
-				F33CFCEE2C2151C0000ABC88 /* PostManager.swift in Sources */,
+				F33CFCEE2C2151C0000ABC88 /* PendingPostManager.swift in Sources */,
 				F33CFCCC2C21360C000ABC88 /* ContentView.swift in Sources */,
 				F33CFCE02C213C59000ABC88 /* MainView.swift in Sources */,
 				F33CFCCA2C21360C000ABC88 /* ConnectifyApp.swift in Sources */,

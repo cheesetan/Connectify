@@ -12,6 +12,12 @@
 		F33CFCCE2C21360E000ABC88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F33CFCCD2C21360E000ABC88 /* Assets.xcassets */; };
 		F33CFCD12C21360E000ABC88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F33CFCD02C21360E000ABC88 /* Preview Assets.xcassets */; };
 		F33CFCDB2C213654000ABC88 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33CFCDA2C213654000ABC88 /* OnboardingView.swift */; };
+		F33CFCDE2C213C4C000ABC88 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33CFCDD2C213C4C000ABC88 /* HomeView.swift */; };
+		F33CFCE02C213C59000ABC88 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33CFCDF2C213C59000ABC88 /* MainView.swift */; };
+		F33CFCE32C213C87000ABC88 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33CFCE22C213C87000ABC88 /* AccountView.swift */; };
+		F33CFCE62C213D5B000ABC88 /* CreatePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33CFCE52C213D5B000ABC88 /* CreatePostView.swift */; };
+		F33CFCEB2C2148AA000ABC88 /* PostsReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33CFCEA2C2148AA000ABC88 /* PostsReviewView.swift */; };
+		F33CFCEE2C2151C0000ABC88 /* PostManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33CFCED2C2151C0000ABC88 /* PostManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +27,12 @@
 		F33CFCCD2C21360E000ABC88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F33CFCD02C21360E000ABC88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F33CFCDA2C213654000ABC88 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		F33CFCDD2C213C4C000ABC88 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F33CFCDF2C213C59000ABC88 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		F33CFCE22C213C87000ABC88 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		F33CFCE52C213D5B000ABC88 /* CreatePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostView.swift; sourceTree = "<group>"; };
+		F33CFCEA2C2148AA000ABC88 /* PostsReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsReviewView.swift; sourceTree = "<group>"; };
+		F33CFCED2C2151C0000ABC88 /* PostManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				F33CFCD72C213619000ABC88 /* Application */,
+				F33CFCEC2C2151AC000ABC88 /* Manager */,
 				F33CFCD82C21362C000ABC88 /* Main */,
 				F33CFCCF2C21360E000ABC88 /* Preview Content */,
 			);
@@ -81,7 +94,11 @@
 		F33CFCD82C21362C000ABC88 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				F33CFCDF2C213C59000ABC88 /* MainView.swift */,
 				F33CFCD92C213635000ABC88 /* Onboarding */,
+				F33CFCDC2C213C3F000ABC88 /* Home */,
+				F33CFCE42C213D52000ABC88 /* Posts */,
+				F33CFCE12C213C7B000ABC88 /* Account */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -92,6 +109,39 @@
 				F33CFCDA2C213654000ABC88 /* OnboardingView.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		F33CFCDC2C213C3F000ABC88 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F33CFCDD2C213C4C000ABC88 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F33CFCE12C213C7B000ABC88 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				F33CFCE22C213C87000ABC88 /* AccountView.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		F33CFCE42C213D52000ABC88 /* Posts */ = {
+			isa = PBXGroup;
+			children = (
+				F33CFCE52C213D5B000ABC88 /* CreatePostView.swift */,
+				F33CFCEA2C2148AA000ABC88 /* PostsReviewView.swift */,
+			);
+			path = Posts;
+			sourceTree = "<group>";
+		};
+		F33CFCEC2C2151AC000ABC88 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				F33CFCED2C2151C0000ABC88 /* PostManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,8 +214,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F33CFCE32C213C87000ABC88 /* AccountView.swift in Sources */,
+				F33CFCEB2C2148AA000ABC88 /* PostsReviewView.swift in Sources */,
+				F33CFCE62C213D5B000ABC88 /* CreatePostView.swift in Sources */,
 				F33CFCDB2C213654000ABC88 /* OnboardingView.swift in Sources */,
+				F33CFCDE2C213C4C000ABC88 /* HomeView.swift in Sources */,
+				F33CFCEE2C2151C0000ABC88 /* PostManager.swift in Sources */,
 				F33CFCCC2C21360C000ABC88 /* ContentView.swift in Sources */,
+				F33CFCE02C213C59000ABC88 /* MainView.swift in Sources */,
 				F33CFCCA2C21360C000ABC88 /* ConnectifyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

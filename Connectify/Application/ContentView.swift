@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @AppStorage("showingOnboarding", store: .standard) private var showingOnboarding = true
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -15,7 +18,9 @@ struct ContentView: View {
                 .foregroundStyle(.tint)
             Text("Hello, world!")
         }
-        .padding()
+        .sheet(isPresented: $showingOnboarding) {
+            OnboardingView()
+        }
     }
 }
 

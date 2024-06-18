@@ -11,6 +11,7 @@
 		F33CFCCC2C21360C000ABC88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33CFCCB2C21360C000ABC88 /* ContentView.swift */; };
 		F33CFCCE2C21360E000ABC88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F33CFCCD2C21360E000ABC88 /* Assets.xcassets */; };
 		F33CFCD12C21360E000ABC88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F33CFCD02C21360E000ABC88 /* Preview Assets.xcassets */; };
+		F33CFCDB2C213654000ABC88 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33CFCDA2C213654000ABC88 /* OnboardingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		F33CFCCB2C21360C000ABC88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F33CFCCD2C21360E000ABC88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F33CFCD02C21360E000ABC88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F33CFCDA2C213654000ABC88 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +53,8 @@
 		F33CFCC82C21360C000ABC88 /* Connectify */ = {
 			isa = PBXGroup;
 			children = (
-				F33CFCC92C21360C000ABC88 /* ConnectifyApp.swift */,
-				F33CFCCB2C21360C000ABC88 /* ContentView.swift */,
-				F33CFCCD2C21360E000ABC88 /* Assets.xcassets */,
+				F33CFCD72C213619000ABC88 /* Application */,
+				F33CFCD82C21362C000ABC88 /* Main */,
 				F33CFCCF2C21360E000ABC88 /* Preview Content */,
 			);
 			path = Connectify;
@@ -65,6 +66,32 @@
 				F33CFCD02C21360E000ABC88 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F33CFCD72C213619000ABC88 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				F33CFCC92C21360C000ABC88 /* ConnectifyApp.swift */,
+				F33CFCCB2C21360C000ABC88 /* ContentView.swift */,
+				F33CFCCD2C21360E000ABC88 /* Assets.xcassets */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		F33CFCD82C21362C000ABC88 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F33CFCD92C213635000ABC88 /* Onboarding */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		F33CFCD92C213635000ABC88 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				F33CFCDA2C213654000ABC88 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +164,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F33CFCDB2C213654000ABC88 /* OnboardingView.swift in Sources */,
 				F33CFCCC2C21360C000ABC88 /* ContentView.swift in Sources */,
 				F33CFCCA2C21360C000ABC88 /* ConnectifyApp.swift in Sources */,
 			);

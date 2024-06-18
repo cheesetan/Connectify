@@ -31,6 +31,13 @@ struct HomeView: View {
                             Section("Business and Marketing Plan") {
                                 Text(post.businessAndMarketingPlan)
                             }
+                            
+                            Section("Contact") {
+                                Link(destination: URL(string: "mailto:\(post.email)")!) {
+                                    LabeledContent("Email:", value: post.email)
+                                }
+                                .multilineTextAlignment(.trailing)
+                            }
                         }
                         .navigationBarTitleDisplayMode(.inline)
                     } label: {

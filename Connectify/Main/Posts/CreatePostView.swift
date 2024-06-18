@@ -21,6 +21,8 @@ struct CreatePostView: View {
     
     @Environment(\.dismiss) var dismiss
     
+    @AppStorage("email", store: .standard) private var email = ""
+    
     @ObservedObject var ppManager: PendingPostManager = .shared
         
     var body: some View {
@@ -40,7 +42,8 @@ struct CreatePostView: View {
                     Button("Post for Review") {
                         withAnimation {
                             ppManager.pendingPosts.append(
-                                Post(productName: productName,
+                                Post(email: email,
+                                     productName: productName,
                                      price: price,
                                      valueProp: valueProp,
                                      businessAndMarketingPlan: businessAndMarketingPlan)

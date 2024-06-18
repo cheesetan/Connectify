@@ -9,6 +9,7 @@ import Foundation
 
 struct Post: Identifiable, Codable, Equatable {
     var id = UUID()
+    var email: String
     var productName: String
     var price: String
     var valueProp: String

@@ -11,6 +11,7 @@ struct AccountView: View {
     
     @AppStorage("loggedIn", store: .standard) private var loggedIn = false
     @AppStorage("isStudentAccount", store: .standard) private var isStudentAccount = false
+    @AppStorage("showingOnboarding", store: .standard) private var showingOnboarding = true
     
     var body: some View {
         NavigationStack {
@@ -38,7 +39,7 @@ struct AccountView: View {
                     if isStudentAccount {
                         LabeledContent("Account Type", value: "Student")
                     } else {
-                        LabeledContent("Account Type", value: "Investor")
+                        LabeledContent("Account Type", value: "Investor + Reviewer")
                     }
                 }
                 
@@ -46,6 +47,12 @@ struct AccountView: View {
                     Button("Log Out", role: .destructive) {
                         withAnimation {
                             loggedIn = false
+                        }
+                    }
+                    Button("Log Out and show Onboarding", role: .destructive) {
+                        withAnimation {
+                            loggedIn = false
+                            showingOnboarding = true
                         }
                     }
                 }
